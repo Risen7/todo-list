@@ -116,6 +116,12 @@ function getLocalTodos() {
         newTodo.classList.add("todo-item");
         todoDiv.appendChild(newTodo);
 
+        const timeInput = document.createElement("span");
+        const timeIntxt = "May 19, 2024"
+        timeInput.innerText = timeIntxt;
+        timeInput.classList.add("timeInput");
+        todoDiv.appendChild(timeInput);
+
         const btnDiv = document.createElement("div");
         btnDiv.classList.add("btn-div");
         todoDiv.appendChild(btnDiv);
