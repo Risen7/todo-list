@@ -3,6 +3,8 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 
+let dateIn = new Date();
+
 document.addEventListener("DOMContentLoaded", getLocalTodos);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
@@ -20,11 +22,9 @@ function addTodo(event) {
     saveLocalTodos(todoInput.value);
 
     const timeInput = document.createElement("span");
-    const timeIntxt = "May 19, 2024"
-    timeInput.innerText = timeIntxt;
     timeInput.classList.add("timeInput");
+    timeInput.innerText = dateIn.toDateString();
     todoDiv.appendChild(timeInput);
-    
     
     const btnDiv = document.createElement("div");
     btnDiv.classList.add("btn-div");
@@ -117,9 +117,8 @@ function getLocalTodos() {
         todoDiv.appendChild(newTodo);
 
         const timeInput = document.createElement("span");
-        const timeIntxt = "May 19, 2024"
-        timeInput.innerText = timeIntxt;
         timeInput.classList.add("timeInput");
+        timeInput.innerText = dateIn.toDateString();
         todoDiv.appendChild(timeInput);
 
         const btnDiv = document.createElement("div");
