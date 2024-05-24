@@ -3,28 +3,34 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 
-let dateIn = new Date();
-
 document.addEventListener("DOMContentLoaded", getLocalTodos);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener("change", filterTodo);
 
+let dateIn = new Date();
+let dateStr = dateIn.toDateString(); 
+
+
 function addTodo(event) {
+    let todoInputDate = `${todoInput.value} - ${dateStr}`;
+    let todoInputDat = `${todoInput.value}<span class"encTime">${dateStr}</span>`
     event.preventDefault();
+    const timeInput = document.createElement("span")
+    timeInput.classList.add("encTime");
+    timeInput.innerText = dateStr;
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
     const newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value; 
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
-    //ADDING TO LOCAL STORAGE 
-    saveLocalTodos(todoInput.value);
+    newTodo.appendChild(timeInput);
 
-    const timeInput = document.createElement("span");
-    timeInput.classList.add("timeInput");
-    timeInput.innerText = dateIn.toDateString();
-    todoDiv.appendChild(timeInput);
+    //ADDING TO LOCAL STORAGE 
+    // saveLocalTodos(todoInput.value,);
+    saveLocalTodos(todoInputDat)
+
     
     const btnDiv = document.createElement("div");
     btnDiv.classList.add("btn-div");
@@ -41,6 +47,7 @@ function addTodo(event) {
     
     todoList.appendChild(todoDiv);
     todoInput.value = "";
+    console.log(todoInputDate);
 }
 
 function deleteCheck(e) {
@@ -109,17 +116,25 @@ function getLocalTodos() {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
     todos.forEach(function(todo) {
+        // const todoDiv = document.createElement("div");
+        // todoDiv.classList.add("todo");
+        // const newTodo = document.createElement("li");
+        // newTodo.innerText = todo;
+        // newTodo.classList.add("todo-item");
+        // todoDiv.appendChild(newTodo);
+
+        let todoInputDate = `${todoInput.value} - ${dateStr}`;
+        // event.preventDefault();
+        const timeInput = document.createElement("span")
+        // timeInput.classList.add("encTime");
+        // timeInput.innerText = dateStr;
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todo");
         const newTodo = document.createElement("li");
-        newTodo.innerText = todo;
+        newTodo.innerHTML = todo; 
         newTodo.classList.add("todo-item");
         todoDiv.appendChild(newTodo);
-
-        const timeInput = document.createElement("span");
-        timeInput.classList.add("timeInput");
-        timeInput.innerText = dateIn.toDateString();
-        todoDiv.appendChild(timeInput);
+        // newTodo.appendChild(timeInput);
 
         const btnDiv = document.createElement("div");
         btnDiv.classList.add("btn-div");
@@ -135,6 +150,8 @@ function getLocalTodos() {
         btnDiv.appendChild(trashButton);
 
         todoList.appendChild(todoDiv);
+
+        console.log(localStorage.getItem("todos"))
     });
 }
 
@@ -155,6 +172,7 @@ function removeLocalTodos(todo) {
 // TIME CLOCK --------------------------------------------------------------------------->
 
 const myLabel = document.getElementById("myLabel");
+
 
 update();
 setInterval(update, 1000);
