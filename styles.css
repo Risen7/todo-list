@@ -43,6 +43,10 @@ form button {
     border-radius: 2rem;
 }
 
+.todo-input {
+    font-size: 1.3rem;
+}
+
 form button {
     color: rgb(255, 200, 0);
     background: white;
@@ -78,7 +82,7 @@ form button:hover {
     padding-left: 0.5rem;
     background: white;
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,6 +114,7 @@ form button:hover {
 }
 
 .todo-item {
+    position: relative;
     padding: 0rem 0.5rem;
 }
 
@@ -181,13 +186,19 @@ select {
     font-size: 1.5rem;
     padding: .5rem 1rem;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
-.timeInput {
+.encTime, span {
     position: absolute;
-    font-size: .8rem;
-    left: -120px;
+    color: white;
+    font-size: 0.9rem;
+    left: -140px;
+    top: -8px;
+    border: 1px rgb(255, 255, 255) solid;
+    border-radius: 20px 0px 0px 20px;
+    padding: 10px;
+    padding-right: 50px;
 }
 
 
