@@ -36,7 +36,8 @@ form {
 form input,
 form button {
     padding: 0.5rem;
-    padding-left: 1rem;
+    padding-top: 0.658rem;
+    padding-left: .97rem;
     font-size: 1.8rem;
     border: none;
     background: white;
@@ -52,7 +53,7 @@ form button {
     background: white;
     cursor: pointer;
     transition: all 0.3 ease;
-    margin-left: 0.5rem;
+    margin-left: .5rem;
 }
 
 form button:hover {
@@ -100,7 +101,7 @@ form button:hover {
     border: none;
     padding: 1rem;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .complete-btn {
@@ -151,7 +152,7 @@ select {
 select {
     color: rgb(255, 200, 0);
     width: 10rem;
-    height: 3.2rem;
+    height: 2.9rem;
     cursor: pointer;
     padding: 1rem;
 }
@@ -200,35 +201,3 @@ select {
     padding: 10px;
     padding-right: 50px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
