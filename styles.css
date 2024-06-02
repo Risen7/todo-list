@@ -91,6 +91,11 @@ form button:hover {
     border-radius: 2rem;
 }
 
+.todo:hover {
+    background-color: black;
+    color: white;
+}
+
 .todo-li {
     flex: 1;
 }
@@ -196,8 +201,12 @@ select {
     border-radius: 20px 0px 0px 20px;
     padding: 10px;
     padding-right: 50px;
+    z-index: -1;
 }
 
+.todo-item span:hover{
+    font-weight: 600;
+}
 
 @media (max-width: 640px) {
     form {
@@ -210,12 +219,12 @@ select {
     .encTime, span {
         font-size: 0.8rem;
         left: 20px;
-        top: -40px;
+        top: -45px;
         padding: 10px;  
         padding-right: 50px;
         border-radius: 20px 20px 0px 0px;
         width: 180px;
-    }   
+    }
 
     .todo {
         margin: 2.5rem;
