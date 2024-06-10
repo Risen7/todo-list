@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: mediumslateblue;
+    background: url(vishnu-mohanan-pfR18JNEMv8-unsplash.jpg);
     color: white;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
@@ -31,6 +31,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 form input,
@@ -38,7 +39,7 @@ form button {
     padding: 0.5rem;
     padding-top: 0.658rem;
     padding-left: .97rem;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     border: none;
     background: white;
     border-radius: 2rem;
@@ -70,6 +71,7 @@ form button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 600px
 }
 
 .todo-list {
@@ -89,6 +91,11 @@ form button:hover {
     align-items: center;
     transition: 0.5s;
     border-radius: 2rem;
+}
+
+.todo-button i{
+    letter-spacing: 3px;
+    font-size: 1.6rem;
 }
 
 .todo:hover {
@@ -111,13 +118,13 @@ form button:hover {
 }
 
 .complete-btn {
-    background: rgb(255, 200, 0);
+    background: rgb(255, 200, 18);
 }
 
 .trash-btn {
     border-top-right-radius: 1.75rem;
     border-bottom-right-radius: 1.75rem;
-    background: rgb(171, 171, 171, 171);
+    background: rgb(81, 192, 243)
 }
 
 .complete-btn:hover,
@@ -163,9 +170,11 @@ select {
 select {
     color: rgb(255, 200, 0);
     width: 10rem;
-    height: 2.9rem;
+    height: 2.7rem;
     cursor: pointer;
-    padding: 1rem;
+    font-size: 1.2rem;
+    /* padding: 1rem; */
+    padding-left: 1rem;
 }
 
 .select::after {
@@ -208,7 +217,7 @@ select {
     font-weight: 600;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 780px) {
     form {
         flex-direction: column;
     }
